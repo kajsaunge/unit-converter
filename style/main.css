@@ -1,0 +1,126 @@
+/* COLORS 
+    #FDF0D5
+    #C6D8D3 Yellow
+    #D81E5B Pink
+    #3A3335 DarkGrey
+    #EB5E55 Orange
+        #EC6C64 Light Orange
+*/
+
+/* INDEX
+    TAGS
+    BASE ELEMENTS
+    LAYOUT
+    SPECIFICS
+    MEDIA QUERIES
+    HELPER CLASSES
+*/
+
+/* TAGS */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: #f1f1f1;
+  font-family: sans-serif;
+  color: #3A3335;
+  font-size: 1.6rem;
+  font-weight: normal;
+  line-height: 1.6;
+  width: 100%;
+  margin: 0 auto;
+}
+input[type="button"] {
+  border-width: 0;
+  border-style: none;
+  padding: 0;
+  /* outline: none; */
+  background: transparent;
+}
+
+/* BASE ELEMENTS */
+.unordered-list {
+    list-style-type: none;
+}
+.form {
+    display: flex;
+    justify-content: center;
+}
+.input {
+  border-width: 0;
+  border-style: none;
+  background: transparent;
+  border-bottom: 2px solid #EB5E55;
+  padding: 8px;
+  margin-right: 20px;
+}
+
+.button,
+input[type="button"] {
+    padding: 10px 20px;
+    background: #EB5E55;
+    color: white;
+}
+
+/* LAYOUT */
+.body-container {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.unit-container {
+   height: 90vh;
+     display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FDF0D5;
+    padding: 10px;
+    position: relative;
+}
+
+.unit-container:nth-child(even) {
+    background: #E6DBC2;
+}
+
+.section-heading {
+    font-size: 50px;
+    text-align: center;
+}
+
+.answer-container {
+    font-size: 80px;
+    transition: 1s;
+    text-align: center;
+    color: #3A3335;
+    padding-top: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* SPECIFICS */
+
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 600px) {
+    /* for laters */
+}
+
+/*  HELPER CLASSES  */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
