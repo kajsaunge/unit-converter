@@ -34,29 +34,45 @@ body {
   width: 100%;
   margin: 0 auto;
 }
+button, input {
+  border-width: 0;
+  border-style: none;
+  padding: 0;
+  outline: none;
+}
 input[type="button"] {
   border-width: 0;
   border-style: none;
   padding: 0;
-  /* outline: none; */
+  outline: none; 
   background: transparent;
 }
 
 /* BASE ELEMENTS */
 .unordered-list {
+    padding-left: 0;
+}
+.unordered-list-item {
     list-style-type: none;
 }
 .form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    align-content: center;
+    max-width: 200px;
 }
 .input {
+  font-size: 20px;
   border-width: 0;
   border-style: none;
   background: transparent;
   border-bottom: 2px solid #EB5E55;
-  padding: 8px;
-  margin-right: 20px;
+  padding: 8px 8px 4px;
+  margin-bottom: 30px;
+  width: 60%;
+  text-align: center;
 }
 
 .button,
@@ -64,6 +80,7 @@ input[type="button"] {
     padding: 10px 20px;
     background: #EB5E55;
     color: white;
+    width: 100%;
 }
 
 /* LAYOUT */
@@ -78,13 +95,13 @@ input[type="button"] {
     width: 100%;
 }
 .unit-container {
-   height: 90vh;
-     display: flex; 
+    MIN-height: 90vh;
+    display: flex; 
     flex-direction: column;
     justify-content: center;
     background-color: #FDF0D5;
     padding: 10px;
-    position: relative;
+    align-items: center;
 }
 
 .unit-container:nth-child(even) {
@@ -98,17 +115,27 @@ input[type="button"] {
 .section-heading {
     font-size: 50px;
     text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.section-heading-span {
+    font-size: 26px;
 }
 
-.answer-container {
-    font-size: 80px;
-    transition: 1s;
+.answer {
+    transition: .5s;
     text-align: center;
     color: #3A3335;
     margin-top: 0;
     margin-bottom: 0;
 }
-
+.answer:first-child {
+    font-size: 60px;
+    font-weight: bold;
+    width: 90vw; 
+    margin: 0 auto;
+    font-size: 10vw;
+}
 /* SPECIFICS */
 
 /* IMAGES */
@@ -133,4 +160,17 @@ input[type="button"] {
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.animate {
+     opacity: 0; 
+    animation: hej .4s .2s linear forwards;
+}
+@-webkit-keyframes hej {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

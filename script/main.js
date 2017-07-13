@@ -1,7 +1,29 @@
-var constant = 32;
+var fahrenheitDifferance = 32;
 var celsiusTemp = "";
 var deciliterAmount = "";
 
+// Remember, this is how
+// document.addEventListener('DOMContentLoaded', function(){
+// });
+
+function preventSubmitAndShowResult() {
+    var keyCode = window.event.keyCode || window.event.which;
+    if (keyCode === 13) {
+       showResult();
+       document.activeElement.blur();
+       return false;
+    }
+}
+
+//TODO refactor to the above
+function preventSubmitAndShowResultCups() {
+    var keyCode = window.event.keyCode || window.event.which;
+    if (keyCode === 13) {
+       showDeciliterCalculation();
+       document.activeElement.blur();
+       return false;
+    }
+}
 
 function clearBox(elementClass)
 {
@@ -9,12 +31,12 @@ function clearBox(elementClass)
 }
 
 function fahrenheitToCelsius(temperature) {
-    var celsiusTemp = (temperature - constant) / 1.8;
+    var celsiusTemp = (temperature - fahrenheitDifferance) / 1.8;
     return Math.round(celsiusTemp) + "°C";
 }
 function cupsToDeciliter(cups) {
     var deciliterAmount = cups * 2.365882365;
-    return Math.round(deciliterAmount) + "dl";
+    return deciliterAmount.toFixed(1) + " dl";
 }   
 
 function resetform() {
@@ -29,27 +51,28 @@ function showResult() {
     var temperature = document.getElementById("fahrenheit").value;
     var celsiusTemp = fahrenheitToCelsius(temperature);
     
-    var innerDiv = document.createElement('h2');
-    innerDiv.className = 'answer-container';
-    document.getElementById("outputTemperature").appendChild(innerDiv).innerHTML = celsiusTemp; // 3
-    resetform()
+    var li = document.createElement('li');
+    li.className = 'unordered-list-item answer animate';
+    li.appendChild(document.createTextNode(temperature + ' °F = ' + celsiusTemp));
+
+    var list = document.getElementById('outputTemperature');
+    list.insertBefore(li, list.childNodes[0]);
+    resetform();
 }
 
 
-
+//TODO refactor to the above
 function showDeciliterCalculation() {
-    // innerDiv.remove();
-    // document.getElementById("outputAmountDl").remove();
-    
     var cups = document.getElementById("cups").value;
     var deciliterAmount = cupsToDeciliter(cups);
     
-    var innerDiv = document.createElement('h2');
-
-    innerDiv.className = 'answer-container';
-    var hej = document.getElementById("outputAmountDl").appendChild(innerDiv).innerHTML = deciliterAmount; // 3
-    resetCupsForm();   
-    clearBox('answer-container'); 
+    var li = document.createElement('li');
+    li.className = 'unordered-list-item answer animate';
+    li.appendChild(document.createTextNode(cups + ' cups = ' + deciliterAmount));
+    
+    var list = document.getElementById("outputAmountDl");
+    list.insertBefore(li, list.childNodes[0]);
+    resetCupsForm();
 }
 
 
