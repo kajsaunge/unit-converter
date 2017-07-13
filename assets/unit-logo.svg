@@ -1,0 +1,61 @@
+<svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 482 292">
+<!--   width="482" height="292"   -->
+      <defs>
+      <style type="text/css">
+        .cls-1 {
+          fill: none;
+          stroke: #000;
+          stroke-miterlimit: 10;
+          stroke-width: 4px;
+        }
+        .eye {
+          opacity: 0;
+          transform-origin: 50%;
+          animation: show .2s 2.4s linear forwards;
+        }
+        @-webkit-keyframes show {
+          0% {
+            <!-- fill: #D81E5B; -->
+            opacity: 0;
+            transform: scale(0);
+          }
+          50% {
+            transform: scale(1.5);
+          }
+          100% {
+            <!-- fill: #000; -->
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+        .cls-1 {
+          stroke-dasharray: 2500;
+          stroke-dashoffset: 0;
+          -webkit-animation: dash 2.5s linear forwards;
+          animation: dash 2.5s linear forwards;
+        }
+        @-webkit-keyframes dash {
+          from {
+              stroke-dashoffset: 2500;
+              stroke: #000;
+          }
+          to {
+              stroke-dashoffset: 0;
+              stroke: #D81E5B;
+          }
+        }
+        #logo.cls-1:hover {
+          margin-left: 1000px;
+          stroke: #00ff00;
+          background: #00ff00;
+          transition: .8s;
+        }
+      </style>
+      <script type="text/javascript">
+
+      </script>
+    </defs>
+  <title>unit-logo</title>
+  <circle class="eye" id="eye" cx="408.4" cy="65.24" r="8.1"/>
+  <path class="cls-1" d="M205.22,288.22,5.73,88.73H74.78l66.72.35H278.66L262,74.76H99.24L29,4.53H48.47L193.14,149.2,181,161l-59-59.11H87.46l109.3,113.45L217.5,193.5l-12.39-12.39,11.34-11.34,12.94,12.94L305,100V89L233,16l17.63.13,72.82,72.82L469,89.11,396.18,16.29,364.71,47.77"/>
+</svg>

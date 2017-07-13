@@ -12,6 +12,7 @@
     BASE ELEMENTS
     LAYOUT
     SPECIFICS
+    IMAGES
     MEDIA QUERIES
     HELPER CLASSES
 */
@@ -24,7 +25,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  background-color: #f1f1f1;
+  background-color: #FDF0D5;
   font-family: sans-serif;
   color: #3A3335;
   font-size: 1.6rem;
@@ -89,6 +90,10 @@ input[type="button"] {
 .unit-container:nth-child(even) {
     background: #E6DBC2;
 }
+.logo-container {
+    display: flex;
+    justify-content: center;
+}
 
 .section-heading {
     font-size: 50px;
@@ -100,13 +105,18 @@ input[type="button"] {
     transition: 1s;
     text-align: center;
     color: #3A3335;
-    padding-top: 20px;
     margin-top: 0;
     margin-bottom: 0;
 }
 
 /* SPECIFICS */
 
+/* IMAGES */
+.logo {
+    fill: #666;
+    stroke: #333;
+    stroke-width: 3;
+}
 
 /* MEDIA QUERIES */
 @media only screen and (min-width: 600px) {
