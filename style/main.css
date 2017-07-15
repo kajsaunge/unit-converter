@@ -160,7 +160,7 @@ input[type="button"] {
 }
 
 .fade-in {
-     opacity: 0; 
+    opacity: 0; 
     animation: fade-in .4s .2s linear forwards;
 }
 @-webkit-keyframes fade-in {
@@ -193,4 +193,13 @@ input[type="button"] {
         margin-left: 100px;
         
     }
+}
+.section-heading-draw {
+    opacity: 0;
+    animation: draw-from-left .1s 2.3s ease-in forwards;
+}
+
+@keyframes draw-from-left {
+    90% { opacity: 1; }
+    100% { opacity: 1; }
 }
