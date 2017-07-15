@@ -52,7 +52,7 @@ function showResult() {
     var celsiusTemp = fahrenheitToCelsius(temperature);
     
     var li = document.createElement('li');
-    li.className = 'unordered-list-item answer animate';
+    li.className = 'unordered-list-item answer fade-in';
     li.appendChild(document.createTextNode(temperature + ' °F = ' + celsiusTemp));
 
     var list = document.getElementById('outputTemperature');
@@ -67,7 +67,7 @@ function showDeciliterCalculation() {
     var deciliterAmount = cupsToDeciliter(cups);
     
     var li = document.createElement('li');
-    li.className = 'unordered-list-item answer animate';
+    li.className = 'unordered-list-item answer fade-in';
     li.appendChild(document.createTextNode(cups + ' cups = ' + deciliterAmount));
     
     var list = document.getElementById("outputAmountDl");

@@ -1,0 +1,43 @@
+.cup {
+  fill: none;
+  stroke: #000;
+  stroke-miterlimit: 10;
+  stroke-width: 4px;
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 0;
+  -webkit-animation: draw-out 1s ease-in forwards;
+  animation: draw-out 1s ease-in forwards;
+}
+@-webkit-keyframes draw-out {
+  from {
+      stroke-dashoffset: 0;
+      stroke: #000;
+  }
+  to {
+      stroke-dashoffset: 1500;
+      stroke: #D81E5B;
+  }
+}
+.deciliter {
+  fill: none;
+  stroke: #000;
+  stroke-miterlimit: 10;
+  stroke-width: 4px;
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 0;
+  opacity: 0;
+  -webkit-animation: draw-in 1s 1s ease-out forwards;
+  animation: draw-in 1s 1s ease-out forwards;
+}
+@-webkit-keyframes draw-in {
+  from {
+      stroke-dashoffset: 1500;
+      stroke: #FDF0D5;
+       opacity: 1; 
+  }
+  to {
+      stroke-dashoffset: 0;
+      stroke: #D81E5B;
+       opacity: 1; 
+  }
+}

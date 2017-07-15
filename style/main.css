@@ -13,8 +13,9 @@
     LAYOUT
     SPECIFICS
     IMAGES
-    MEDIA QUERIES
     HELPER CLASSES
+    MEDIA QUERIES
+    
 */
 
 /* TAGS */
@@ -62,6 +63,7 @@ input[type="button"] {
     align-items: center;
     align-content: center;
     max-width: 200px;
+    margin-top: 15%;
 }
 .input {
   font-size: 20px;
@@ -95,7 +97,7 @@ input[type="button"] {
     width: 100%;
 }
 .unit-container {
-    MIN-height: 90vh;
+    min-height: 90vh;
     display: flex; 
     flex-direction: column;
     justify-content: center;
@@ -139,16 +141,11 @@ input[type="button"] {
 /* SPECIFICS */
 
 /* IMAGES */
-.logo {
+/* .logo {
     fill: #666;
     stroke: #333;
     stroke-width: 3;
-}
-
-/* MEDIA QUERIES */
-@media only screen and (min-width: 600px) {
-    /* for laters */
-}
+} */
 
 /*  HELPER CLASSES  */
 .visually-hidden {
@@ -162,15 +159,38 @@ input[type="button"] {
   width: 1px;
 }
 
-.animate {
+.fade-in {
      opacity: 0; 
-    animation: hej .4s .2s linear forwards;
+    animation: fade-in .4s .2s linear forwards;
 }
-@-webkit-keyframes hej {
+@-webkit-keyframes fade-in {
     from {
         opacity: 0;
     }
     to {
         opacity: 1;
+    }
+}
+
+.graphics-container {
+    position: relative;
+    width: 50vw;
+    max-width: 350px; 
+    height: 85px;
+    margin-left: 40px;
+}
+.graphics {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 600px) {
+    .graphics-container {
+        height: 130px;
+        margin-left: 100px;
+        
     }
 }

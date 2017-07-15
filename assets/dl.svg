@@ -1,0 +1,6 @@
+<?xml-stylesheet type="text/css" href="../style/graphics.css"?>
+
+<svg id="deciliter" xmlns="http://www.w3.org/2000/svg" width="454" height="193" viewBox="0 0 454 193">
+  <title>Deciliter</title>
+  <path class="deciliter" d="M33.87,21.51C59.62,15.23,87.79,11,143,11c82.27,0,129,9.4,129,21s-46.7,26-129,26S14,43.6,14,32V96s2,42,129,42c123,0,133-38,133-38V52s24,11,107,5c26.1-1.89,52-6,52,11,0,0,2,14-19,14S325,64,285,71"/>
+</svg>
