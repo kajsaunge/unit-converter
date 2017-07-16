@@ -20,19 +20,19 @@
                 <h2 class="section-heading">°F <span class="section-heading-span">to </span>°C</h2>
                  <form class="form" id="fahrenheitForm" action="#" method="get">   
                     <label class="visually-hidden" for="fahrenheit">Fahrenheit</label>
-                    <input class="input" type"text" id="fahrenheit" name="getDegree" onKeyPress="return preventSubmitAndShowResult()"/>
-                    <input class="button" type="button" id="getDegree" onClick="showResult()" value="Convert"/>
+                    <input class="input" type"text" id="fahrenheit" name="getDegree" onKeyPress='return preventSubmitAndShowResult("fahrenheit")'/>
+                    <input class="button" type="button" id="getDegree" value="Convert"/>
                  </form>  
-                <ul class="unordered-list" id="outputTemperature"></ul>
+                <ul class="unordered-list" id="celsiusList"></ul>
             </article>
             <article class="unit-container">
                 <h2 class="section-heading">Cups <span class="section-heading-span">to</span> dl</h2>
                 <form class="form" id="cupsForm" action="#" method="get">  
                     <label class="visually-hidden" for="cups">Cups</label>
-                    <input class="input" type"text" id="cups" name="getDl" onKeyPress="return preventSubmitAndShowResultCups()"/>
-                    <input class="button" type="button" id="getDl" onClick="showDeciliterCalculation()" value="Convert"/>
+                    <input class="input" type"text" id="cups" name="getDl" onKeyPress='return preventSubmitAndShowResult("cups")'/>
+                    <input class='button' type="button" id="getDl" value='Convert'/>
                 </form> 
-                <ul id="outputAmountDl"></ul>
+                <ul class="unordered-list" id="deciliterList"></ul>
             </article>
     </body>
     <script src="script/main.js"></script>

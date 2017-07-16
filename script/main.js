@@ -1,78 +1,75 @@
-var fahrenheitDifferance = 32;
-var celsiusTemp = "";
-var deciliterAmount = "";
 
-// Remember, this is how
-// document.addEventListener('DOMContentLoaded', function(){
-// });
+document.getElementById('getDegree').addEventListener('click', function(){
+        showResult('fahrenheit');
+})
+    
+document.getElementById('getDl').addEventListener('click', function(){
+    showResult('cups');
+})
 
-function preventSubmitAndShowResult() {
+function preventSubmitAndShowResult(calculationType) {
     var keyCode = window.event.keyCode || window.event.which;
+
     if (keyCode === 13) {
-       showResult();
+       showResult(calculationType);
        document.activeElement.blur();
+    
        return false;
     }
 }
 
-//TODO refactor to the above
-function preventSubmitAndShowResultCups() {
-    var keyCode = window.event.keyCode || window.event.which;
-    if (keyCode === 13) {
-       showDeciliterCalculation();
-       document.activeElement.blur();
-       return false;
-    }
-}
+function showResult(calculationType) {
+    var elementValue;
+    var calculatedResult;
 
-function clearBox(elementClass)
-{
-    document.getElementsByClassName(elementClass).innerHTML = "";
+    if(calculationType === 'fahrenheit') {
+        elementValue = document.getElementById(calculationType).value;
+        calculatedResult = fahrenheitToCelsius(elementValue);
+
+        addsListItem('celsiusList', calculationType, elementValue, calculatedResult);
+    }
+    
+    if (calculationType === 'cups') {
+        elementValue = document.getElementById(calculationType).value;
+        calculatedResult = cupsToDeciliter(elementValue);
+        
+        addsListItem('deciliterList', calculationType, elementValue, calculatedResult);
+    }
+    
+    
+    resetForm(calculationType);
 }
 
 function fahrenheitToCelsius(temperature) {
-    var celsiusTemp = (temperature - fahrenheitDifferance) / 1.8;
-    return Math.round(celsiusTemp) + "°C";
+    var fahrenheitDifferance = 32;
+    var celsiusToFahrenheitModifier = 1.8;
+    var celsiusTemperature = (temperature - fahrenheitDifferance) / celsiusToFahrenheitModifier;
+    
+    return Math.round(celsiusTemperature) + '°C';
 }
+
 function cupsToDeciliter(cups) {
-    var deciliterAmount = cups * 2.365882365;
-    return deciliterAmount.toFixed(1) + " dl";
-}   
+    var deciliterModifier = 2.365882365;
+    var deciliterAmount = cups * deciliterModifier;
 
-function resetform() {
-    document.getElementById("fahrenheitForm").reset();
-}
-function resetCupsForm() {
-    document.getElementById("cupsForm").reset();
+    return deciliterAmount.toFixed(1) + ' dl';
 }
 
+function addsListItem(listId, calculationType, elementValue, calculatedResult) {
+    var list = document.getElementById(listId);
+    var listItem = document.createElement('li');
 
-function showResult() {
-    var temperature = document.getElementById("fahrenheit").value;
-    var celsiusTemp = fahrenheitToCelsius(temperature);
-    
-    var li = document.createElement('li');
-    li.className = 'unordered-list-item answer fade-in';
-    li.appendChild(document.createTextNode(temperature + ' °F = ' + celsiusTemp));
-
-    var list = document.getElementById('outputTemperature');
-    list.insertBefore(li, list.childNodes[0]);
-    resetform();
+    listItem.className = 'unordered-list-item answer fade-in';
+    listItem.appendChild(document.createTextNode(elementValue + (calculationType === 'fahrenheit' 
+        ? ' °F = ' 
+        : ' cups = ') + calculatedResult));
+    list.insertBefore(listItem, list.childNodes[0]);
 }
 
-
-//TODO refactor to the above
-function showDeciliterCalculation() {
-    var cups = document.getElementById("cups").value;
-    var deciliterAmount = cupsToDeciliter(cups);
-    
-    var li = document.createElement('li');
-    li.className = 'unordered-list-item answer fade-in';
-    li.appendChild(document.createTextNode(cups + ' cups = ' + deciliterAmount));
-    
-    var list = document.getElementById("outputAmountDl");
-    list.insertBefore(li, list.childNodes[0]);
-    resetCupsForm();
+function resetForm(calculationType) {
+    calculationType === 'fahrenheit'
+        ? document.getElementById('fahrenheitForm').reset()
+        : document.getElementById('cupsForm').reset();
 }
 
 
