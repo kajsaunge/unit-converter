@@ -1,19 +1,22 @@
 
 document.getElementById('getDegree').addEventListener('click', function(){
         showResult('fahrenheit');
+        document.getElementById('fahrenheit').focus();
 })
-    
+
 document.getElementById('getDl').addEventListener('click', function(){
     showResult('cups');
+    document.getElementById('cups').focus();
 })
+
 
 function preventSubmitAndShowResult(calculationType) {
     var keyCode = window.event.keyCode || window.event.which;
 
     if (keyCode === 13) {
        showResult(calculationType);
-       document.activeElement.blur();
-    
+       document.activeElement.focus();
+
        return false;
     }
 }
@@ -22,29 +25,33 @@ function showResult(calculationType) {
     var elementValue;
     var calculatedResult;
 
-    if(calculationType === 'fahrenheit') {
-        elementValue = document.getElementById(calculationType).value;
-        calculatedResult = fahrenheitToCelsius(elementValue);
+        if(calculationType === 'fahrenheit') {
+            elementValue = document.getElementById(calculationType).value;
+            calculatedResult = fahrenheitToCelsius(elementValue);
 
-        addsListItem('celsiusList', calculationType, elementValue, calculatedResult);
-    }
-    
-    if (calculationType === 'cups') {
-        elementValue = document.getElementById(calculationType).value;
-        calculatedResult = cupsToDeciliter(elementValue);
-        
-        addsListItem('deciliterList', calculationType, elementValue, calculatedResult);
-    }
-    
-    
-    resetForm(calculationType);
+            if (elementValue == "") {
+              return false;
+            }  addsListItem('celsiusList', calculationType, elementValue, calculatedResult);
+        }
+
+        if (calculationType === 'cups') {
+            elementValue = document.getElementById(calculationType).value;
+            calculatedResult = cupsToDeciliter(elementValue);
+
+            if (elementValue == "") {
+                return false;
+            } addsListItem('deciliterList', calculationType, elementValue, calculatedResult);
+        }
+
+        resetForm(calculationType);
 }
+
 
 function fahrenheitToCelsius(temperature) {
     var fahrenheitDifferance = 32;
     var celsiusToFahrenheitModifier = 1.8;
     var celsiusTemperature = (temperature - fahrenheitDifferance) / celsiusToFahrenheitModifier;
-    
+
     return Math.round(celsiusTemperature) + '°C';
 }
 
@@ -60,8 +67,8 @@ function addsListItem(listId, calculationType, elementValue, calculatedResult) {
     var listItem = document.createElement('li');
 
     listItem.className = 'unordered-list-item answer fade-in';
-    listItem.appendChild(document.createTextNode(elementValue + (calculationType === 'fahrenheit' 
-        ? ' °F = ' 
+    listItem.appendChild(document.createTextNode(elementValue + (calculationType === 'fahrenheit'
+        ? ' °F = '
         : ' cups = ') + calculatedResult));
     list.insertBefore(listItem, list.childNodes[0]);
 }
@@ -71,5 +78,4 @@ function resetForm(calculationType) {
         ? document.getElementById('fahrenheitForm').reset()
         : document.getElementById('cupsForm').reset();
 }
-
 
