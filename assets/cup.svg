@@ -1,6 +1,6 @@
 <?xml-stylesheet type="text/css" href="../style/graphics.css"?>
-
-<svg id="cup" xmlns="http://www.w3.org/2000/svg" width="454" height="193" viewBox="0 0 454 193">
+<?xml-stylesheet type="text/css" href="../style/main.css"?>
+<svg id="cup" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 454 193" class="graphics">
   <title>Cup</title>
   <path class="cup" d="M44.87,21.51C70.62,15.23,88.79,11,144,11c82.27,0,119,9.4,119,21s-36.7,26-119,26S25,43.6,25,32V96s-8,82,119,82c123,0,123-78,123-78V52s42.38-39.34,65-14c25,28-44,37-60,86"/>
 </svg>

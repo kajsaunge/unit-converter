@@ -33,11 +33,11 @@
   from {
       stroke-dashoffset: 1500;
       stroke: #FDF0D5;
-       opacity: 1; 
+       opacity: 1;
   }
   to {
       stroke-dashoffset: 0;
       stroke: #D81E5B;
-       opacity: 1; 
+       opacity: 1;
   }
 }

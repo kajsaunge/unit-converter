@@ -7,16 +7,17 @@
         <title>Unit Converter</title>
         <link rel="stylesheet" href="style/normalize.css">
         <link rel="stylesheet" href="style/main.css">
+        <link rel="stylesheet" href="style/graphics.css">
     </head>
     <body class="body-container">
             <article class="unit-container">
                 <object class="graphics-container">
-                    <embed class="graphics" src="assets/cup.svg" width="100%">
-                    <embed class="graphics" src="assets/dl.svg" width="100%">
+                    <embed class="graphics" src="assets/cup.svg">
+                    <embed class="graphics" src="assets/dl.svg">
                 </object>
                 <h1 class="section-heading section-heading-draw">Unit Converter</h1>
             </article>
-            <article class="unit-container">
+            <article id="fahrenheit-container" class="unit-container">
                 <h2 class="section-heading">°F <span class="section-heading-span">to </span>°C</h2>
                  <form class="form" id="fahrenheitForm" action="#" method="get">
                     <label class="visually-hidden" for="fahrenheit">Fahrenheit</label>
@@ -25,7 +26,7 @@
                  </form>
                 <ul class="unordered-list" id="celsiusList"></ul>
             </article>
-            <article class="unit-container">
+            <article id="cups-container" class="unit-container">
                 <h2 class="section-heading">Cups <span class="section-heading-span">to</span> dl</h2>
                 <form class="form" id="cupsForm" action="#" method="get">
                     <label class="visually-hidden" for="cups">Cups</label>

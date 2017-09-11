@@ -79,3 +79,10 @@ function resetForm(calculationType) {
         : document.getElementById('cupsForm').reset();
 }
 
+// scroll
+// var farenheitOffsetTop = document.getElementById('fahrenheit-container').offsetTop;
+// var farenheitOffsetLeft = document.getElementById('fahrenheit-container').offsetLeft;
+// var cupsOffset = document.getElementById('cups-container').offsetTop;
+// console.log(farenheitOffsetTop, farenheitOffsetLeft, 'hej');
+// farenheitOffsetTop.scrollIntoView();
+    // farenheitOffsetTop = window.pageYOffset || document.documentElement.scrollTop;
