@@ -1,35 +1,34 @@
-
-document.getElementById('getDegree').addEventListener('click', function(){
+document.getElementById('getDegree').addEventListener('click', () => {
         showResult('fahrenheit');
         document.getElementById('fahrenheit').focus();
 })
 
-document.getElementById('getDl').addEventListener('click', function(){
+document.getElementById('getDl').addEventListener('click', () => {
     showResult('cups');
     document.getElementById('cups').focus();
 })
 
-
 function preventSubmitAndShowResult(calculationType) {
-    var keyCode = window.event.keyCode || window.event.which;
+    const keyCode = window.event.keyCode || window.event.which;
 
     if (keyCode === 13) {
        showResult(calculationType);
        document.activeElement.focus();
-
        return false;
     }
 }
 
-function showResult(calculationType) {
-    var elementValue;
-    var calculatedResult;
 
-        if(calculationType === 'fahrenheit') {
+
+function showResult(calculationType) {
+    let elementValue;
+    let calculatedResult;
+
+        if (calculationType === 'fahrenheit') {
             elementValue = document.getElementById(calculationType).value;
             calculatedResult = fahrenheitToCelsius(elementValue);
 
-            if (elementValue == "") {
+            if (!elementValue) {
               return false;
             }  addsListItem('celsiusList', calculationType, elementValue, calculatedResult);
         }
@@ -38,7 +37,7 @@ function showResult(calculationType) {
             elementValue = document.getElementById(calculationType).value;
             calculatedResult = cupsToDeciliter(elementValue);
 
-            if (elementValue == "") {
+            if (!elementValue) {
                 return false;
             } addsListItem('deciliterList', calculationType, elementValue, calculatedResult);
         }
@@ -48,23 +47,23 @@ function showResult(calculationType) {
 
 
 function fahrenheitToCelsius(temperature) {
-    var fahrenheitDifferance = 32;
-    var celsiusToFahrenheitModifier = 1.8;
-    var celsiusTemperature = (temperature - fahrenheitDifferance) / celsiusToFahrenheitModifier;
+    const fahrenheitDifferance = 32;
+    const celsiusToFahrenheitModifier = 1.8;
+    let celsiusTemperature = (temperature - fahrenheitDifferance) / celsiusToFahrenheitModifier;
 
-    return Math.round(celsiusTemperature) + '°C';
+    return `${Math.round(celsiusTemperature)} °C`;
 }
 
 function cupsToDeciliter(cups) {
-    var deciliterModifier = 2.365882365;
-    var deciliterAmount = cups * deciliterModifier;
+    const deciliterModifier = 2.365882365;
+    let deciliterAmount = cups * deciliterModifier;
 
-    return deciliterAmount.toFixed(1) + ' dl';
+    return `${deciliterAmount.toFixed(1)} dl`;
 }
 
 function addsListItem(listId, calculationType, elementValue, calculatedResult) {
-    var list = document.getElementById(listId);
-    var listItem = document.createElement('li');
+    let list = document.getElementById(listId);
+    let listItem = document.createElement('li');
 
     listItem.className = 'unordered-list-item answer fade-in';
     listItem.appendChild(document.createTextNode(elementValue + (calculationType === 'fahrenheit'
@@ -78,11 +77,3 @@ function resetForm(calculationType) {
         ? document.getElementById('fahrenheitForm').reset()
         : document.getElementById('cupsForm').reset();
 }
-
-// scroll
-// var farenheitOffsetTop = document.getElementById('fahrenheit-container').offsetTop;
-// var farenheitOffsetLeft = document.getElementById('fahrenheit-container').offsetLeft;
-// var cupsOffset = document.getElementById('cups-container').offsetTop;
-// console.log(farenheitOffsetTop, farenheitOffsetLeft, 'hej');
-// farenheitOffsetTop.scrollIntoView();
-    // farenheitOffsetTop = window.pageYOffset || document.documentElement.scrollTop;
