@@ -9,31 +9,31 @@
         <link rel="stylesheet" href="style/main.css">
         <link rel="stylesheet" href="style/graphics.css">
     </head>
-    <body class="body-container">
-            <article class="unit-container">
-                <object class="graphics-container">
+    <body class="site">
+            <header class="header">
+                <object class="header__graphics">
                     <embed class="graphics" src="assets/cup.svg">
                     <embed class="graphics" src="assets/dl.svg">
                 </object>
-                <h1 class="section-heading section-heading-draw">Unit Converter</h1>
-            </article>
-            <article id="fahrenheit-container" class="unit-container">
-                <h2 class="section-heading">°F <span class="section-heading-span">to </span>°C</h2>
-                 <form class="form" id="fahrenheitForm" action="#" method="get">
+                <h1 class="unit-heading unit-heading-fade-in">Unit Converter</h1>
+            </header>
+            <article id="fahrenheit-container" class="unit-converter">
+                <h2 class="unit-heading">°F <span class="unit-heading-span">to </span>°C</h2>
+                 <form class="unit-form" id="fahrenheitForm" action="#" method="get">
                     <label class="visually-hidden" for="fahrenheit">Fahrenheit</label>
                     <input class="input" type"text" id="fahrenheit" name="getDegree" onKeyPress='return preventSubmitAndShowResult("fahrenheit")'/>
-                    <input class="button" type="button" id="getDegree" value="Convert"/>
+                    <input class="do-convertion" type="button" id="getDegree" value="Convert"/>
                  </form>
-                <ul class="unordered-list" id="celsiusList"></ul>
+                <ul class="converted-list" id="celsiusList"></ul>
             </article>
-            <article id="cups-container" class="unit-container">
-                <h2 class="section-heading">Cups <span class="section-heading-span">to</span> dl</h2>
-                <form class="form" id="cupsForm" action="#" method="get">
+            <article id="cups-container" class="unit-converter">
+                <h2 class="unit-heading">Cups <span class="unit-heading-span">to</span> dl</h2>
+                <form class="unit-form" id="cupsForm" action="#" method="get">
                     <label class="visually-hidden" for="cups">Cups</label>
                     <input class="input" type"text" id="cups" name="getDl" onKeyPress='return preventSubmitAndShowResult("cups")'/>
-                    <input class='button' type="button" id="getDl" value='Convert'/>
+                    <input class='do-convertion' type="button" id="getDl" value='Convert'/>
                 </form>
-                <ul class="unordered-list" id="deciliterList"></ul>
+                <ul class="converted-list" id="deciliterList"></ul>
             </article>
     </body>
     <script src="output/main.js"></script>

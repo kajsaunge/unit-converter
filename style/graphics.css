@@ -15,7 +15,7 @@
   }
   to {
       stroke-dashoffset: 1500;
-      stroke: #D81E5B;
+      stroke: #EB5E55;
   }
 }
 .deciliter {
@@ -37,7 +37,7 @@
   }
   to {
       stroke-dashoffset: 0;
-      stroke: #D81E5B;
+      stroke: #EB5E55;
        opacity: 1;
   }
 }

@@ -65,7 +65,7 @@ function addsListItem(listId, calculationType, elementValue, calculatedResult) {
     let list = document.getElementById(listId);
     let listItem = document.createElement('li');
 
-    listItem.className = 'unordered-list-item answer fade-in';
+    listItem.className = 'converted-list__item fade-in';
     listItem.appendChild(document.createTextNode(elementValue + (calculationType === 'fahrenheit'
         ? ' °F = '
         : ' cups = ') + calculatedResult));
